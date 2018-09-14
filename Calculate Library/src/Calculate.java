@@ -2,6 +2,7 @@
 //@author JasonJi
 //@version 9/12/18
 
+//Part 1
 public class Calculate {
 	//returns the square to input
 	public static int square(int number) {
@@ -30,8 +31,42 @@ public class Calculate {
 		double answer = (number/3.14159)*180;
 		return answer;
 	}
-	public static double discreminant(double number1,double number2,double number3) {
+	public static double discriminant(double number1,double number2,double number3) {
 		double answer = (number2*number2)-(4*number1*number3);
 		return answer;
 	}
+	//return Improper Fraction(String) when input three mixed numbers
+	public static String toImproperfrac(int wholenumber,int numerator,int denominator) {
+		int fraction = denominator * wholenumber + numerator;
+		return fraction + "/" + denominator;
+	}
+	//return mixed number(String) when input numerator and denominator
+	public static String toMixedNum(int numerator, int denominator) {
+		int wholeNum = numerator / denominator;
+		int newNumber = numerator % denominator;
+		return wholeNum + "_" + newNumber + "/" + denominator;
+	}
+	public static String foil(int a, int b, int c, int d, String x) {
+		int f = a * c;
+		int o = a * d;
+		int i = b * c;
+		int l = b * d;
+		int oi = o + i;
+		return f + x + "^2" + "+" + oi + x + "+" + l;
+	}
+
+// Part 2
+	public static String isDivisibleBy(int number1,int number2) {
+		int a = number1 % number2;
+		int b = number1 % number2;
+		if (a == 0 , b == 0) {
+			return "Both of them can be divided by another.";
+		}
+		else {
+			return "It can't be divided.";
+		}
+				
+		
+	}
+	
 }

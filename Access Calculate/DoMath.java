@@ -11,7 +11,9 @@ public class DoMath {
 		System.out.println(Calculate.average(3.7,8.8));
 		System.out.println(Calculate.toDegrees(45));
 		System.out.println(Calculate.discriminant(3,5,8));
-		
+		System.out.println(Calculate.toImproperfrac(3,4,5));
+		System.out.println(Calculate.toMixedNum(7,2));
+		System.out.println(Calculate.foil(1,1,1,1,"n"));
 	}
 
 }
