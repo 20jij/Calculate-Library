@@ -14,6 +14,12 @@ public class DoMath {
 		System.out.println(Calculate.toImproperfrac(3,4,5));
 		System.out.println(Calculate.toMixedNum(7,2));
 		System.out.println(Calculate.foil(1,1,1,1,"n"));
+		//part 2
+		System.out.println(Calculate.isDivisibleBy(2,2));
+		System.out.println(Calculate.absValue(-2));
+		System.out.println(Calculate.max(3.4, 4.5, 5.6));
+		System.out.println(Calculate.min(5, 7));
+		System.out.println(Calculate.round2(5.333333));
 	}
 
 }

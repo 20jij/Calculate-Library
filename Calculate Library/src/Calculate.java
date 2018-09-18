@@ -59,14 +59,55 @@ public class Calculate {
 	public static String isDivisibleBy(int number1,int number2) {
 		int a = number1 % number2;
 		int b = number1 % number2;
-		if (a == 0 , b == 0) {
-			return "Both of them can be divided by another.";
+		if (a == 0 && b == 0) {
+			return "Both of them can be divided by the other.";
 		}
 		else {
 			return "It can't be divided.";
+		}	
+	}
+	public static double absValue(double number) {
+		if (number>=0) {
+			double answer = number;
+			return answer;
 		}
-				
-		
+		else {
+			double answer = number-2*number;
+			return answer;
+		}
+	}
+	public static double max(double number1,double number2,double number3) {
+		if (number1>number2 && number1>number3) {
+			return number1;
+		}
+		else if (number2>number1 && number2>number3) {
+			return number2;
+		}
+		else {
+			return number3;
+		}
+	}
+	public static int min(int a ,int b) {
+		if (a>=b) {
+			return b;
+		}
+		else {
+			return a;
+		}
+	}
+	public static double round2(double a) {
+		double b = 100*a;
+		a= (int) b;
+		double c= b-a;
+		if (c>=0.5) {
+			return (a+1)/100;
+		}
+		else {
+			return a/100;
+		}
+		}
 	}
 	
-}
+	
+
+ 
