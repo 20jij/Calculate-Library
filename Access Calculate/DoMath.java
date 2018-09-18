@@ -21,5 +21,4 @@ public class DoMath {
 		System.out.println(Calculate.min(5, 7));
 		System.out.println(Calculate.round2(5.333333));
 	}
-
 }
