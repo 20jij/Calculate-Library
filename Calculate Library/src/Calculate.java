@@ -173,9 +173,13 @@ public class Calculate {
 //returns the square root of a double.
 	public static double sqrt(double number) {
 		double result= 1;
-		for (double a=1;number-result*result>=0.005 || result*result-number>=0.005;a++ ) {
-	    result = 0.5*(number/a+a);
+		
+		while (number-result*result>=0.005 || result*result-number>=0.005 ) {
+		
+	    result = 0.5*(number/result+result);
+	    
 	    }
+		result= round2 (result);
 		return result;
 	}
 }
