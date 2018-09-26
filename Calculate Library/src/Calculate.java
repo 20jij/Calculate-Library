@@ -42,7 +42,7 @@ public class Calculate {
 		return answer;
 	}
 	//return Improper Fraction(String) when input three mixed numbers
-	public static String toImproperfrac(int wholenumber,int numerator,int denominator) {
+	public static String toImproperFrac(int wholenumber,int numerator,int denominator) {
 		int fraction = denominator * wholenumber + numerator;
 		return fraction + "/" + denominator;
 	}
@@ -66,6 +66,9 @@ public class Calculate {
 // Part 2
 	//returns a boolean that determines whether or not one integer is evenly divisible by another.
 	public static boolean isDivisibleBy(int number1,int number2) {
+		if (number2 == 0) {
+			throw new IllegalArgumentException ("The denominator can't be negative.");
+		}
 		int d = number1 % number2;
 		if (d == 0 ) {
 			return true;
@@ -132,14 +135,20 @@ public class Calculate {
 //part 3
 //returns the value to a positive integer power. 
 	public static double exponent(double a, int b) {
+		if (b<0 ) {
+			throw new IllegalArgumentException ("The exponent can't be negative.");
+		}
 		double result = 1;
 		for (int c=1;c<=b;c++ ) {
 			result = result*a;
 		}
 		return result;
 		}
-//returns the factorial of the value passed.
+//returns the factorial of the value passed
 	public static int factorial(int a) {
+		if (a<0) {
+			throw new IllegalArgumentException ("The operand can't be negative.");
+		}
 		int result = a;
 		for (int b=1;b<a;b++) {
 			result = result*b;
@@ -172,15 +181,38 @@ public class Calculate {
 	}
 //returns the square root of a double.
 	public static double sqrt(double number) {
+		if (number<0) {
+			throw new IllegalArgumentException ("The operand can't be negative.");
+		}
 		double result= 1;
 		
-		while (number-result*result>=0.005 || result*result-number>=0.005 ) {
+		while (number-result*result>=0.0000005 || result*result-number>=0.0000005 ) {
 		
 	    result = 0.5*(number/result+result);
 	    
 	    }
 		result= round2 (result);
 		return result;
+	}
+	
+//part4
+	
+//returns the roots of a quadratic equation in standard form.
+	public static String quadForm(int a, int b, int c) {
+		double discriminant1 = discriminant(a,b,c);
+		if (discriminant1 < 0) {
+			 return "no real roots.";
+		}
+		double discriminant2 = sqrt(discriminant1);
+		double result1 = (discriminant2-b)/2*a;
+		double result2 = (-discriminant2-b)/2*a;
+		
+		if (discriminant1 == 0) {
+			return result1 + "";
+		}
+		else {
+			return result1 + " and " + result2;
+		}
 	}
 }
 	
