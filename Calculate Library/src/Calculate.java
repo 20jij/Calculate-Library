@@ -203,7 +203,7 @@ public class Calculate {
 //part4
 	
 //returns the roots of a quadratic equation in standard form.
-	public static String quadForm(int a, int b, int c) {
+	public static String quadForm(double a, double b, double c) {
 		double discriminant1 = discriminant(a,b,c);
 		if (discriminant1 < 0) {
 			 return "no real roots.";

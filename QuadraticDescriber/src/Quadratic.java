@@ -4,8 +4,19 @@
 
 public class Quadratic {
 	public static String quadrDescriber (double a, double b, double c) {
-		discriminant = discriminant(a,b,c);
-		
+		double discriminant = Calculate.discriminant(a,b,c);
+		if (a>0) {
+			String opens =  "Up" ;
+		}
+		else {
+			String opens =  "Down";
+		}
+		double symmetryLine = -b/2*a;
+		double vertexX = symmetryLine;
+		double vertexY = a*symmetryLine*symmetryLine+b*symmetryLine+c;
+		double yIntercept = c;
+		String xIntercept = Calculate.quadForm(a, b, c);
+		return "Opens:" + opens \n"Axis of Symmetry:" + symmetryLine \n"Vertex:(" + vertexX + ", " + vertexY + ")" \n 
 	
 		
 	}
